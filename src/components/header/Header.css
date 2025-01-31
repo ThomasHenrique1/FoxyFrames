@@ -22,13 +22,14 @@
 /* Seção do logo e título */
 .logo-section {
   display: flex;
+  justify-content: center; /* Alinha a logo no centro */
   align-items: center;
+  gap: 10px; /* Espaçamento entre a logo e outros elementos */
 }
 
 .header-logo {
-  width: 75px;
-  height: 75px;
-  margin-right: 10px;
+  width: 70px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
 }
 
 .header-title {
@@ -38,6 +39,14 @@
   font-family: 'Arial', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-align: center;
+  display: none;
+}
+.header-title span {
+  display: block; /* Quebra em uma nova linha */
+  font-size: 1.4rem; /* Pode ser um pouco menor */
+  font-weight: 500;
+  color: #fff;
   text-align: center;
 }
 
@@ -53,6 +62,7 @@
   gap: 2rem;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 .nav-links a {
@@ -79,7 +89,24 @@
   padding-bottom: 5px;
 }
 
-/* Estilo do menu em dispositivos móveis */
+/* Menu Hambúrguer (apenas visível em telas pequenas) */
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Estilo para quando o menu está aberto */
+.nav.nav-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
@@ -94,9 +121,20 @@
     flex-direction: column;
     gap: 1rem;
     margin-top: 20px;
+    display: none; /* O menu fica escondido por padrão */
+  }
+
+  /* Mostra o menu quando o estado "nav-open" é aplicado */
+  .nav.nav-open .nav-links {
+    display: flex;
   }
 
   .nav-links a {
     font-size: 1.2rem;
+  }
+
+  /* Mostrar o botão do menu hambúrguer */
+  .menu-button {
+    display: block;
   }
 }
