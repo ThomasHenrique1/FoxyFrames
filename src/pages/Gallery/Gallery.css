@@ -15,120 +15,108 @@
   text-shadow: 1px 2px 3px rgba(207, 152, 0, 0.699);
 }
 
-.gallery-caption {
-  margin-top: 10px;
-  font-size: 1.8rem;
-  color: #d36907;
-  font-weight: 600;
-  text-align: center;
+/* Container do carrossel */
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 30px 0;
 }
 
-/* Carrossel */
-.carousel {
+/* Estilização da imagem */
+.carousel-image {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  margin: 30px 0;
-  flex-wrap: wrap; /* Permite que os itens se ajustem melhor em telas pequenas */
+  max-width: 500px;
+  width: 100%;
 }
 
 .carousel-image img {
-  width: 100%; /* Tornar a imagem responsiva */
-  max-width: 500px; /* Limitar a largura máxima */
-  height: auto;
+  width: 100%;
   border-radius: 12px;
-  cursor: pointer;
   box-shadow: 0 4px 8px rgba(255, 174, 0, 0.664);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .carousel-image img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(255, 174, 0, 0.664);
 }
 
-/* Botões de controle */
+/* Estilização dos botões dentro da imagem */
 .carousel-control {
-  background: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  color: white;
   cursor: pointer;
-  color: #555;
-  transition: color 0.3s ease;
-  z-index: 10; /* Para garantir que os botões fiquem visíveis */
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+  z-index: 10; /* Garante que o botão fique acima da imagem */
 }
 
 .carousel-control:hover {
-  color: #000;
+  background: rgba(0, 0, 0, 0.8);
 }
 
-/* Modal */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
+/* Correção da posição dos botões */
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+/* Garantir que a imagem não cubra os botões */
+.carousel-image {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background: white;
-  padding: 20px; /* Menos padding em telas pequenas */
-  border-radius: 12px;
-  text-align: center;
-  width: 90%;
-  max-width: 600px;
-  position: relative;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 0.5s ease;
-}
-
-.modal-image {
+  max-width: 500px;
   width: 100%;
-  max-height: 60vh; /* Limitar a altura da imagem */
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 20px;
 }
 
-.modal-description {
-  font-size: 1rem;
-  color: #333;
-  font-weight: 500;
-  margin-bottom: 15px;
-  line-height: 1.6;
+.carousel-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(255, 174, 0, 0.664);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Nome da raposa em negrito */
-.modal-description b {
-  font-weight: 700;
-  color: #000;
+/* Área de informações abaixo da imagem */
+.image-info {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Botão fechar no canto direito */
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
-  border: none;
+.gallery-caption {
   font-size: 1.8rem;
-  cursor: pointer;
+  color: #d36907;
+  font-weight: 600;
+}
+
+.gallery-description {
+  font-size: 1rem;
   color: #555;
-  transition: color 0.3s ease;
+  margin-top: 5px;
+  line-height: 1.4;
 }
 
-.modal-close:hover {
-  color: #000;
-}
-
-/* Botão Saber Mais */
+/* Botão "Saiba Mais" */
 .know-more-link {
   display: inline-block;
   background-color: #1b74d6;
@@ -137,7 +125,7 @@
   font-size: 1rem;
   font-weight: 600;
   padding: 10px 20px;
-  border-radius: 158px;
+  border-radius: 20px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   margin-top: 10px;
 }
@@ -147,62 +135,30 @@
   transform: translateY(-2px);
 }
 
-/* Colocar o botão na linha de baixo */
-.modal-description + .know-more-link {
-  display: block;
-  margin-top: 15px;
-}
-
-/* Animação */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Ajustes para telas pequenas */
+/* Responsividade */
 @media (max-width: 768px) {
   .gallery-title {
-    font-size: 1.8rem; /* Título menor em dispositivos móveis */
+    font-size: 2rem;
   }
 
   .gallery-caption {
-    font-size: 1.4rem; /* Texto de legenda ajustado */
+    font-size: 1.4rem;
   }
 
-  .carousel {
-    gap: 10px;
+  .gallery-description {
+    font-size: 0.9rem;
   }
 
   .carousel-control {
-    font-size: 2rem; /* Tamanho menor do botão para telas pequenas */
+    font-size: 1.8rem;
+    padding: 8px;
   }
 
   .carousel-image img {
-    max-width: 90%; /* Imagens menores para dispositivos móveis */
+    max-width: 90%;
   }
 
-  .modal-content {
-    width: 90%;
-    padding: 15px;
-  }
-
-  .modal-description {
-    font-size: 0.9rem; /* Texto um pouco menor */
-  }
-
-  .modal-image {
-    max-height: 50vh; /* Limitar a altura no modal para não ocupar toda a tela */
-  }
-
-  .modal-close {
-    top: 10px;
-    right: 10px;
-    font-size: 1.6rem; /* Botão de fechar um pouco menor */
+  .image-info {
+    padding: 10px;
   }
 }
