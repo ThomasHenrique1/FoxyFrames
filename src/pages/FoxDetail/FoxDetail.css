@@ -1,0 +1,133 @@
+/* Contêiner principal que agrupa todos os elementos */
+.fox-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #f8f8f8;
+  font-family: "Poppins", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contêiner interno para separar a imagem da raposa e as informações */
+.fox-detail {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* Seção da imagem da raposa */
+.fox-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fox-image {
+  width: 100%;
+  max-width: 450px; /* Limite máximo de largura */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Efeito de zoom */
+}
+
+.fox-image:hover {
+  transform: scale(1.05); /* Zoom suave ao passar o mouse */
+}
+
+/* Seção das informações da raposa */
+.fox-info {
+  flex: 2;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 600px;
+}
+
+/* Título da raposa */
+.fox-title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #ffa500;
+  padding-bottom: 10px;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Estilo para cada detalhe da raposa */
+.fox-scientific-name,
+.fox-size,
+.fox-weight,
+.fox-habitat,
+.fox-diet {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.fox-description {
+  font-size: 1rem;
+  text-align: justify;
+  color: #555;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+/* Botão Voltar */
+.back-button {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 30px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background-color: #e69500;
+  transform: scale(1.05); /* Efeito de expansão ao passar o mouse */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .fox-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fox-image-container {
+    margin-bottom: 20px;
+  }
+
+  .fox-image {
+    max-width: 100%;
+  }
+
+  .fox-info {
+    width: 100%;
+  }
+
+  .fox-title {
+    font-size: 2.2rem;
+  }
+}

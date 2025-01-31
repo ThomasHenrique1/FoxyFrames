@@ -1,0 +1,102 @@
+/* Estilo geral do cabeçalho */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1b1b1b; /* Cor de fundo escura */
+  padding: 15px 20px; /* Aumenta um pouco o padding para dar mais espaço */
+  border-bottom: 2px solid #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contêiner para logo e título */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Seção do logo e título */
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  width: 75px;
+  height: 75px;
+  margin-right: 10px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Navegação */
+.nav {
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* Efeito de hover nos links */
+.nav-links a:hover {
+  color: #ffa52ff1;
+  transform: scale(1.05);
+}
+
+/* Adicionar uma linha embaixo do link ativo */
+.nav-links a:active,
+.nav-links a.active {
+  border-bottom: 3px solid #ffa52ff1;
+  padding-bottom: 5px;
+}
+
+/* Estilo do menu em dispositivos móveis */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-section {
+    margin-bottom: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 20px;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+}
