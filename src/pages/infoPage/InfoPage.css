@@ -164,7 +164,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  width: 100%;  
 }
 
 .quick-links img {
@@ -182,7 +184,6 @@
   box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3); /* Sombra mais intensa ao passar o mouse */
 }
 
-
 .quick-links a {
   text-decoration: none;
   font-size: 1rem;
@@ -195,7 +196,6 @@
   color: #ad7930d5; /* Marrom mais claro ao passar o mouse */
   transform: translateY(-2px);
 }
-
 
 /* Responsividade ajustada */
 @media (max-width: 1024px) {
