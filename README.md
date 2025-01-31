@@ -12,6 +12,10 @@ Um site interativo e informativo sobre diferentes espécies de raposas, apresent
 <p>Navegação dinâmica com React Router<p>
 <p>Design responsivo e intuitivo</p><br>
 
+# Deploy
+
+Voce pode conferir o deploy atraves do link a seguir: [FoxyFrames](https://foxy-frames.vercel.app)
+
 # 📜 Licença
 Este projeto está sob a licença MIT.
 
